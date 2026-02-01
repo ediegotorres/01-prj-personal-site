@@ -2,6 +2,18 @@
    CSS RESET & GLOBAL STYLES
    ======================================== */
 
+/* 
+   KEY IMPROVEMENTS IN THIS STYLESHEET:
+   ====================================
+   1. TYPOGRAPHY: Increased line-height to 1.7 for better paragraph readability
+   2. SPACING: Normalized section padding to 120px (desktop) / 80px (tablet) / 60px (mobile)
+   3. HOVER EFFECTS: Added lift animations and shadow effects to interactive elements
+   4. BUTTONS: Project links styled as proper buttons with padding, borders, and hover states
+   5. RESPONSIVE: Enhanced mobile layouts with improved padding and stacked layouts
+   6. ACCESSIBILITY: Added cursor pointers and visual feedback on hover for interactive elements
+   7. CONSISTENCY: Unified font weights and spacing across all sections
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +28,7 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #0f172a; /* Dark navy background */
   color: #e2e8f0; /* Light text */
-  line-height: 1.6;
+  line-height: 1.7; /* Improved readability for body text */
   overflow-x: hidden;
 }
 
@@ -39,6 +51,7 @@ body {
   position: relative;
   display: inline-block;
   width: 100%;
+  letter-spacing: -0.5px; /* Tighter heading spacing for visual hierarchy */
 }
 
 .section-title::after {
@@ -103,10 +116,12 @@ body {
   font-size: 0.95rem;
   transition: all 0.3s ease;
   position: relative;
+  padding-bottom: 2px;
 }
 
 .nav-link:hover,
-.nav-link:active {
+.nav-link:active,
+.nav-link:focus {
   color: #06b6d4;
 }
 
@@ -122,7 +137,8 @@ body {
 }
 
 .nav-link:hover::after,
-.nav-link:active::after {
+.nav-link:active::after,
+.nav-link:focus::after {
   width: 100%;
 }
 
@@ -136,7 +152,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;
+  padding: 80px 20px; /* Increased padding for better spacing */
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -186,6 +202,7 @@ body {
   color: #f1f5f9;
   margin-bottom: 1rem;
   line-height: 1.2;
+  letter-spacing: -1px; /* Tight heading spacing */
 }
 
 .hero-tagline {
@@ -257,7 +274,7 @@ body {
    ======================================== */
 
 .about {
-  padding: 100px 20px;
+  padding: 120px 20px; /* Normalized vertical spacing */
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   border-top: 1px solid rgba(148, 163, 184, 0.1);
 }
@@ -271,7 +288,7 @@ body {
   font-size: 1rem;
   color: #cbd5e1;
   margin-bottom: 1.5rem;
-  line-height: 1.8;
+  line-height: 1.75; /* Improved paragraph readability */
 }
 
 .about-details {
@@ -299,7 +316,7 @@ body {
    ======================================== */
 
 .skills {
-  padding: 100px 20px;
+  padding: 120px 20px; /* Normalized vertical spacing */
   background: #0f172a;
   border-top: 1px solid rgba(148, 163, 184, 0.1);
 }
@@ -333,7 +350,7 @@ body {
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem; /* Improved icon and text spacing */
 }
 
 .skill-category-title i {
@@ -351,17 +368,20 @@ body {
   display: inline-block;
   background: rgba(6, 182, 212, 0.15);
   color: #06b6d4;
-  padding: 0.6rem 1.2rem;
+  padding: 0.65rem 1.3rem; /* Improved padding for better clickability feel */
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
   border: 1px solid rgba(6, 182, 212, 0.3);
   transition: all 0.3s ease;
+  cursor: pointer; /* Visual feedback that items are interactive */
 }
 
 .skill-chip:hover {
   background: rgba(6, 182, 212, 0.3);
-  transform: scale(1.05);
+  color: #0ea5e9; /* Enhanced color change on hover */
+  transform: scale(1.08); /* Subtle lift effect */
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
 }
 
 /* ========================================
@@ -369,7 +389,7 @@ body {
    ======================================== */
 
 .projects {
-  padding: 100px 20px;
+  padding: 120px 20px; /* Normalized vertical spacing */
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   border-top: 1px solid rgba(148, 163, 184, 0.1);
 }
@@ -438,9 +458,9 @@ body {
 .project-description {
   font-size: 0.95rem;
   color: #cbd5e1;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Improved spacing for project cards */
   flex-grow: 1;
-  line-height: 1.6;
+  line-height: 1.7; /* Better paragraph readability */
   position: relative;
   z-index: 1;
 }
@@ -454,6 +474,7 @@ body {
   z-index: 1;
 }
 
+/* Action links styled as buttons for better visual hierarchy */
 .project-link {
   color: #06b6d4;
   text-decoration: none;
@@ -463,12 +484,18 @@ body {
   align-items: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
-  padding: 0.5rem 0;
+  padding: 0.6rem 1.2rem; /* Button-like padding */
+  border-radius: 6px; /* Rounded corners for button feel */
+  background: rgba(6, 182, 212, 0.1); /* Subtle background */
+  border: 1px solid rgba(6, 182, 212, 0.2);
 }
 
 .project-link:hover {
   color: #0ea5e9;
+  background: rgba(6, 182, 212, 0.25); /* Stronger background on hover */
+  border-color: rgba(6, 182, 212, 0.5);
   transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
 }
 
 /* ========================================
@@ -476,7 +503,7 @@ body {
    ======================================== */
 
 .reflections {
-  padding: 100px 20px;
+  padding: 120px 20px; /* Normalized vertical spacing */
   background: #0f172a;
   border-top: 1px solid rgba(148, 163, 184, 0.1);
 }
@@ -520,7 +547,7 @@ body {
 .reflection-item p {
   font-size: 0.95rem;
   color: #cbd5e1;
-  line-height: 1.7;
+  line-height: 1.75; /* Improved paragraph readability */
 }
 
 /* ========================================
@@ -528,7 +555,7 @@ body {
    ======================================== */
 
 .contact {
-  padding: 100px 20px;
+  padding: 120px 20px; /* Normalized vertical spacing */
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   border-top: 1px solid rgba(148, 163, 184, 0.1);
 }
@@ -537,10 +564,11 @@ body {
   text-align: center;
   font-size: 1.1rem;
   color: #cbd5e1;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem; /* Increased spacing for emphasis */
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.7; /* Better paragraph readability */
 }
 
 .contact-links {
@@ -555,24 +583,31 @@ body {
   background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%);
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 2.5rem; /* Improved padding for better visual weight */
   display: flex;
   align-items: center;
   gap: 1.5rem;
   text-decoration: none;
   transition: all 0.3s ease;
+  cursor: pointer; /* Visual feedback that link is clickable */
 }
 
 .contact-card:hover {
   border-color: rgba(6, 182, 212, 0.5);
   background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(14, 165, 233, 0.15) 100%);
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(6, 182, 212, 0.15);
+  transform: translateY(-8px); /* More pronounced lift effect */
+  box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
 }
 
 .contact-card i {
   font-size: 2.5rem;
   color: #06b6d4;
+  transition: all 0.3s ease; /* Smooth icon transition on hover */
+}
+
+.contact-card:hover i {
+  color: #0ea5e9;
+  transform: scale(1.1); /* Subtle scale effect for icon */
 }
 
 .contact-info {
@@ -588,6 +623,7 @@ body {
 .contact-info p {
   font-size: 0.95rem;
   color: #cbd5e1;
+  font-weight: 400; /* Ensure consistent weight */
 }
 
 /* ========================================
@@ -597,14 +633,15 @@ body {
 .footer {
   background: #0a0f1a;
   border-top: 1px solid rgba(148, 163, 184, 0.1);
-  padding: 2.5rem 20px;
+  padding: 2rem 20px; /* Reduced padding to reduce visual weight */
   text-align: center;
 }
 
 .footer-content p {
   color: #64748b;
   font-size: 0.9rem;
-  margin: 0.5rem 0;
+  margin: 0.3rem 0; /* Tighter spacing for footer */
+  font-weight: 400;
 }
 
 .footer-content p:first-child {
@@ -617,9 +654,16 @@ body {
    ======================================== */
 
 @media (max-width: 768px) {
+  /* Navbar adjustments for mobile */
+  .nav-menu {
+    gap: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Hero section mobile */
   .hero {
     min-height: auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
     margin-top: 80px;
   }
 
@@ -633,6 +677,7 @@ body {
 
   .hero-description {
     font-size: 1rem;
+    line-height: 1.7;
   }
 
   .hero-buttons {
@@ -644,15 +689,12 @@ body {
     justify-content: center;
   }
 
-  .nav-menu {
-    gap: 1rem;
-    font-size: 0.9rem;
-  }
-
+  /* Section titles */
   .section-title {
     font-size: 2rem;
   }
 
+  /* Grid layouts stack on mobile */
   .projects-grid,
   .skills-grid,
   .reflections-content,
@@ -664,6 +706,7 @@ body {
     grid-template-columns: 1fr;
   }
 
+  /* Contact cards stack vertically and center */
   .contact-card {
     flex-direction: column;
     text-align: center;
@@ -672,52 +715,110 @@ body {
   .hero-buttons {
     gap: 0.5rem;
   }
+
+  /* Improved padding on mobile sections */
+  .about,
+  .skills,
+  .projects,
+  .reflections,
+  .contact {
+    padding: 80px 20px;
+  }
 }
 
 @media (max-width: 480px) {
+  /* Navbar on very small screens */
   .nav-logo {
     font-size: 1.2rem;
   }
 
   .nav-menu {
-    gap: 0.8rem;
+    gap: 0.6rem;
+    font-size: 0.75rem;
   }
 
   .nav-link {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  /* Hero section on very small screens */
+  .hero {
+    padding: 40px 16px;
+    margin-top: 80px;
   }
 
   .hero-title {
     font-size: 2rem;
+    margin-bottom: 0.8rem;
   }
 
   .hero-tagline {
     font-size: 1rem;
+    margin-bottom: 1rem;
   }
 
   .hero-description {
     font-size: 0.9rem;
+    margin-bottom: 1.5rem;
   }
 
+  /* Section titles */
   .section-title {
     font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 
+  /* Skills section on small screens */
   .skill-chips {
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .skill-chip {
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.7rem;
+  }
+
+  /* Project cards */
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
   }
 
   .project-footer {
     flex-direction: column;
+    gap: 0.7rem;
   }
 
   .project-link {
+    width: 100%;
     justify-content: center;
+  }
+
+  /* Contact on small screens */
+  .contact-card {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .contact-card i {
+    font-size: 2rem;
+  }
+
+  /* Reduced padding on very small screens */
+  .about,
+  .skills,
+  .projects,
+  .reflections,
+  .contact {
+    padding: 60px 16px;
+  }
+
+  /* Footer adjustments */
+  .footer {
+    padding: 1.5rem 16px;
   }
 }
 
