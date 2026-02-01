@@ -135,7 +135,7 @@ body {
   min-height: calc(100vh - 60px);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 60px 20px;
   position: relative;
   overflow: hidden;
